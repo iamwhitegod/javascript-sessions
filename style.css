@@ -1,0 +1,13 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Rubik", sans-serif;
+  color: #444444;
+  background-color: rgb(255, 242, 225);
+  height: 100vh;
+}
+
+h1 {
+  font-size: 64px;
+}
