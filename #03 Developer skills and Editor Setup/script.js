@@ -1,7 +1,5 @@
 // Remember, we're gonna use strict mode in all scripts now!
-'use strict';
-
-'kingsley';
+"use strict";
 
 // Setting up Prettier and Vcode
 
@@ -23,9 +21,9 @@
       * Install Live server globally  
 */
 
-const xyz = '23';
+const xyz = "23";
 if (xyz === 23) console.log(23);
-const calcAge = birthYear => 2037 - birthYear;
+const calcAge = (birthYear) => 2037 - birthYear;
 
 // FIXME: BUG TODO LEC REFACTOR DOCUMENTATION NOTES
 
@@ -255,7 +253,7 @@ NOTES:
  * temperature amplitude. Keep in mind that sometimes there might be a sensor error."
  */
 
-const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+const temperatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
 
 // 1) Understanding the problem
 // - What is temp amplitude? Answer: difference
@@ -327,7 +325,6 @@ const amplitudeNew = calcTempAmplitudeNew([3, 5, 1], [7, 3, 9]);
 console.log(amplitudeNew);
 */
 
-
 /**
  * Debugging (Fixing Errors)
  *
@@ -371,9 +368,7 @@ console.log(amplitudeNew);
  *
  */
 
-
 // Debugging with the console and breakpoints
-
 
 /*
 const measureKelvin = function () {
@@ -404,7 +399,6 @@ console.log(measureKelvin());
 
 // console.log(console);
 */
-
 
 /*
 Given an array of forecasted maximum temperatures, the thermometer 
@@ -444,16 +438,15 @@ const data1 = [17, 21, 23];
 const data2 = [12, 5, -5, 0, 4];
 
 function printForecast(arr) {
-  let str = '';
+  let str = "";
 
   for (let i = 0; i < arr.length; i++) {
     str += ` ...${arr[i]}°C in ${i + 1} days`;
   }
-  str = str + '...';
+  str = str + "...";
 
   return str;
 }
 
 console.log(printForecast(data1));
 console.log(printForecast(data2));
-
