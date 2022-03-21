@@ -97,3 +97,85 @@ btnHold.addEventListener('click', function () {
 });
 
 btnNew.addEventListener('click', init);
+// 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
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function (nums, target) {
+  let sum,
+    output = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      sum = nums[i] + nums[j];
+      if (sum === target) {
+        output.push(i);
+        output.push(j);
+        return output;
+      }
+    }
+  }
+};
+
+twoSum([3, 2, 4], 6);
+
+twoSum([2, 7, 11, 15], 9);
+
+twoSum([3, 2, 4], 6);
+twoSum([3, 3], 6);
+
+twoSum([2, 5, 5, 11], 10);
+
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number}
+ * 
+ * 
+ * Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+
+The overall run time complexity should be O(log (m+n)).
+
+Example 1:
+
+Input: nums1 = [1,3], nums2 = [2]
+Output: 2.00000
+Explanation: merged array = [1,2,3] and median is 2.
+Example 2:
+
+Input: nums1 = [1,2], nums2 = [3,4]
+Output: 2.50000
+Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+ */
+
+var findMedianSortedArrays = function (nums1, nums2) {
+  let mergedArr = [...nums1, ...nums2], median;
+
+  for (let i = 0; i < mergedArr.length; i++) {
+    for (let j = 0; j < mergedArr.length; j++) {
+      if (mergedArr[j] > mergedArr[j + 1]) {
+        const temp = mergedArr[j];
+        mergedArr[j] = mergedArr[j + 1];
+        mergedArr[j + 1] = temp;
+      }
+    }
+  }
+
+  if (mergedArr.length % 2 !== 0) {
+    const index = Math.floor(mergedArr.length / 2);
+    median = mergedArr[index];
+
+    return median;
+  }
+
+  if (mergedArr.length % 2 === 0) {
+    const index1 = mergedArr.length / 2 - 1;
+    const index2 = mergedArr.length / 2;
+    median = (mergedArr[index1] + mergedArr[index2]) / 2;
+
+    return median;
+  }
+};
